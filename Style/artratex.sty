@@ -548,7 +548,7 @@
 %-> Figure environment support
 %-
 \RequirePackage{graphicx}% packages for including graphics
-\RequirePackage[format=plain,hangindent=2.0em,font={small,bf},skip=8pt,labelsep=space]{caption}% options: [margin=10pt,labelfont=bf]
+\RequirePackage[format=plain,hangindent=2.0em,font={small},skip=8pt,labelsep=quad]{caption}% options: [margin=10pt,labelfont=bf]
 \RequirePackage{subcaption}% package for subfigures
 \RequirePackage[list=off]{bicaption}% package for binary captions
 \DeclareCaptionOption{bi-first}[]{}% 1st language
@@ -666,10 +666,10 @@
 %-> Layout, space, and style
 %-
 \ifartx@geometry% enable geometry to redefine page layout
-    \geometry{paper=a4paper,left=20mm,right=20mm,top=20mm,bottom=20mm,headheight=20mm,headsep=3mm,footskip=3mm}%
+    \geometry{paper=a4paper,left=20mm,right=20mm,top=20mm,bottom=25mm,headheight=20mm,headsep=3mm,footskip=8mm}%
 \fi
-%\linespread{1.5}% 1.5 for "one and a half" line spacing, and 2.0 for "double" line spacing
-%\setlength{\parskip}{0.5ex plus 0.25ex minus 0.25ex}% skip space a paragraph
+\linespread{1.5}% 1.5 for "one and a half" line spacing, and 2.0 for "double" line spacing
+%\setlength{\parskip}{0.5ex plus 0.25ex minus 0.25ex}% skip space a paragraph %%默认行距1.5
 \setcounter{tocdepth}{2}% depth for the table of contents
 \setcounter{secnumdepth}{3}% depth for section numbering, default is 2(subsub)
 %- Set equation, figure, table numbering
@@ -720,12 +720,14 @@
     }
     \fancypagestyle{mainmatterstyle}{% style for mainmatter
         \fancyhf{}% clear fields
-        \fancyhead[L]{\footnotesize {南京邮电大学硕士研究生学位论文}}
-        \fancyhead[R]{\footnotesize{\leftmark}}
+        \fancyhead[L]{\color{gray}\footnotesize {南京邮电大学硕士研究生学位论文}}
+        \fancyhead[R]{\color{gray}\footnotesize{\leftmark}}
         % \fancyhead[C]{\footnotesize \ifnumodd{\value{page}}{\leftmark}{\@title}}% structure elements
-        \fancyfoot[C]{\footnotesize{\thepage}}% page number
-        \renewcommand{\headrulewidth}{0.8pt}% header rule
+        \fancyfoot[C]{\color{gray}\footnotesize{\thepage}}% page number
+        % \renewcommand{\headrulewidth}{0.8pt}% header rule
+        \renewcommand{\headrule}{\color{gray}\hrule width\headwidth}
         \renewcommand{\footrulewidth}{0pt}% footer rule
+        % \renewcommand{\footrule}{\vspace{-5pt}}
     }
     \fancypagestyle{backmatterstyle}{% header and footer style for backmatter
         \fancyhf{}% clear fields
@@ -734,6 +736,7 @@
         \renewcommand{\headrulewidth}{0.8pt}% header rule
         \renewcommand{\footrulewidth}{0pt}% footer rule
     }
+    
     %- Redefine \frontmatter to include the change
     \providecommand{\frontmatter}{}% compatibility for non-book classes
     \let\artxfrontmatter\frontmatter%

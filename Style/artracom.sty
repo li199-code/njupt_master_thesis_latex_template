@@ -105,6 +105,23 @@
 %-> Add dots before equation number
 %-
 \newcommand{\adddotsbeforeeqnnum}{\def\maketag@@@##1{\hbox{\m@th\normalfont\dots\ ##1}}}%
+
+\let\oldtabular\tabular 
+\renewcommand{\tabular}{\zihao{5}\oldtabular}
+
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{ragged2e}
+% 该命令用于控制 p{} 的情况
+\newcolumntype{P}[1]{>{\RaggedRight\hspace{0pt}}p{#1}} % 使用过程中，将p{4cm}换成P{4cm}，小写改成大写即可！
+% 该命令用于控制 X 的情况
+\newcolumntype{Z}{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}X} % 使用过程中，将Z 换成 X，即可！
+\let\oldtabularx\tabularx
+\renewcommand{\tabularx}{\zihao{5}\oldtabularx}
+ 
+% 可利用 RaggedLeft Centering替换RaggedRight，实现靠右和居中 [代码对大小写敏感！！！！！！！！！！！！！！！！！！！！！！！！！！！！]
+
+ 
 %---------------------------------------------------------------------------%
 \endinput
 

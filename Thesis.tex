@@ -24,6 +24,7 @@
 \usepackage[super,list]{Style/artratex}% 
 \usepackage{titletoc}
 
+
 %- usage: \usepackage[option1,option2,...,optionN]{artratex}
 %- Multiple optional arguments:
 %- [bibtex|biber]% set bibliography processor and package
@@ -43,6 +44,11 @@
 %- [math]% enable some extra math packages
 %- [xlink]% disable link colors
 \usepackage{Style/artracom}% user defined commands
+\usepackage{pdfpages}
+\usepackage{multirow}
+\usepackage{ctex}
+\setCJKfamilyfont{myfont}{BabelStone Han}
+\newcommand{\MyFont}{\CJKfamily{myfont}}
 %---------------------------------------------------------------------------%
 %->> Document inclusion
 %---------------------------------------------------------------------------%
@@ -53,24 +59,48 @@
 %-
 %-> Titlepage information
 %-
-\input{Tex/Frontinfo}%
+% \input{Tex/Frontinfo}%
 \begin{document}
+
+%% 如果论文题目和提交日期有变化，及时到本地源文件修改后再上传overleaf!!
+\includepdf[pages={1,2}]{cover.pdf} 
+
+
+
+
 %-
 %-> Frontmatter: title page, abstract, content list, symbol list, preface
 %-
 \frontmatter% initialize the environment
-\input{Tex/Frontmatter}% title page, abstract
+\input{Tex/Frontmatter}% 题目页，摘要
 
-\titlecontents{chapter}[4em]{\zihao{5}}{\contentslabel{4em}}{\hspace*{-4em}}{\titlerule*[0.6pc]{$\cdot$}\contentspage}
+%% 目录设置开始
+%% 目录字号为五号，10.5pt
+\titlecontents{chapter}
+                [4em] %左间距
+                {\zihao{5}} %标题格式（绪论）
+                {\contentslabel{4em} \vspace{2pt}} %设置标题标志的格式,如序号格式、序号宽度、序号与标题内容之间的间距等。
+                {\hspace*{-4em}} %%无序号标题
+                {\titlerule*[0.3pc]{$\cdot$}\contentspage}%%设置引导线和页码
 
 
-\titlecontents{section}[4em]{\zihao{5}}{\contentslabel{2em}}{\hspace*{-2em}}{\titlerule*[0.6pc]{$\cdot$}\contentspage}
+\titlecontents{section}
+                [4em]
+                {\zihao{5}}
+                {\contentslabel{2em} \vspace{2pt}}
+                {\hspace*{-2em}}
+                {\titlerule*[0.3pc]{$\cdot$}\contentspage}
 
 
-\titlecontents{subsection}[7em]{\zihao{5}}{\contentslabel{3em}}{\hspace*{-2em}}{\titlerule*[0.6pc]{$.$}\contentspage}
+\titlecontents{subsection}
+                [7em]
+                {\zihao{5}}
+                {\contentslabel{3em} \vspace{2pt}}
+                {\hspace*{-2em}}
+                {\titlerule*[0.3pc]{$.$}\contentspage}
+%% 目录设置结束
 
-
-
+%% 引入目录
 {
     \linespread{1.0}% local line space
     % \intobmk*{\cleardoublepage}{\contentsname}% add link to bookmark
@@ -80,14 +110,15 @@
     % \intobmk*{\cleardoublepage}{\listtablename}% add link to bookmark
     % \listoftables% table catalog
 }
-% \input{Tex/Prematter}% symbol list, preface content
+
 %-
-%-> Mainmatter
+%-> 正文
 %-
 \mainmatter% initialize the environment
 \input{Tex/Mainmatter}% main content
 %-
 
+% 参考文献
 \intotoc*{\cleardoublepage}{\bibname}% add link to toc
 \artxifstreq{\artxbib}{bibtex}{% enable bibtex
     \linespread{1}

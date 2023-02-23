@@ -62,7 +62,7 @@
 %---------------------------------------------------------------------------%
 %->> Load class information
 %---------------------------------------------------------------------------%
-\LoadClass[UTF8,a4paper,zihao=-4]{ctexbook}%
+\LoadClass[UTF8,a4paper,zihao=-4]{ctexbook}%zihao=-4即小四号，12磅，正文字号
 \@ifclasslater{ctexbook}{2017/01/01}{}{%
     \ClassError{ucasthesis}{ctex >= 2017/01/01 is required ...}{}%
 }
@@ -128,7 +128,7 @@
 \setlength{\headsep}{17.5pt}% vertical margin between header and body text
 \setlength{\footskip}{10.4mm}% vertical margin between footer and body text
 %- specifies the amount of space between paragraphs.
-\setlength{\parskip}{0.5ex plus 0.25ex minus 0.25ex}
+\setlength{\parskip}{0ex plus 0.25ex minus 0.25ex} %% parskip 设置段间距
 %- line spacing
 \linespread{1.6}% line space setting
 \raggedbottom% prevent adding vertical white space in strange places
@@ -687,7 +687,7 @@
 
 %- parameters for spacing and length in toc
 \def\@dotsep{1.5mu}% separation between dots in mu units
-\def\@pnumwidth{2em}% width of a box in which the page number is put
+\def\@pnumwidth{0.2em}% width of a box in which the page number is put
 \def\@tocrmarg{2em}% right margin for multiple line entries, \@tocrmarg ≥ \@pnumwidth
 \def\@chaptervspace{1ex}% vertical space between chapter titles
 
