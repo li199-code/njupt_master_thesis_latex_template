@@ -9,7 +9,6 @@
 ## 使用tips
 
 - 封面是作为单独的pdf文件合并到主文件中的。所以，先编辑好`cover.docx`，另存为`cover.pdf`，最后替换掉默认的封面。
-- 使用过程遇到更多问题，参阅我的博客系列文章：https://blog.jl98.xyz/categories/%E7%A1%95%E5%A3%AB%E8%AE%BA%E6%96%87/
 
 ## 友情链接
 
