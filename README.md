@@ -2,7 +2,7 @@
 
 ## 关于
 
-个人项目，非官方！作者已毕业离校，欢迎fork代码。
+个人项目，非官方！作者已毕业离校，欢迎fork代码并添加特性。
 
 本模板从[ucasthesis](https://github.com/mohuangrui/ucasthesis)改造而来，特此向原作者表示感谢！
 
