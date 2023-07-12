@@ -6,6 +6,8 @@
 
 本模板从[ucasthesis](https://github.com/mohuangrui/ucasthesis)改造而来，特此向原作者表示感谢！
 
+有帮助的话，给个星吧，让更多人看到！
+
 你可以将本项目下载到本地用`xelatex`编译运行，但我更建议你用我提供的项目[overleaf网址](https://www.overleaf.com/latex/templates/njupt-master-thesis-template/fxwgvmcybdjp)在线编辑。相信我，没错的。
 
 ## 使用tips
