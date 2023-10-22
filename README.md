@@ -16,7 +16,7 @@
 
 ## 友情链接
 
-- 南邮本科latex模板：`https://github.com/imguozr/NJUPThesis-Bachelor`
+- 南邮本科毕业设计latex模板：`https://github.com/imguozr/NJUPThesis-Bachelor`
 
 ## 时间线
 
