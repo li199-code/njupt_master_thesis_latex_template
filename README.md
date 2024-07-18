@@ -1,5 +1,9 @@
 # 南京邮电大学（NJUPT）硕士研究生毕业论文latex模板
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=li199-code/njupt_master_thesis_latex_template&type=Date)](https://star-history.com/#li199-code/njupt_master_thesis_latex_template&Date)
+
 ## 关于
 
 个人项目，非官方！作者已毕业离校，欢迎fork代码并添加特性。
